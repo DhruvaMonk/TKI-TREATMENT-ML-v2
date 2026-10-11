@@ -1,0 +1,145 @@
+========================================================================
+LOO MODELING REPORT (harold's protocol) -- v2
+========================================================================
+
+Features CSV : data/processed/features_v2.csv  (norm=zscore)
+Cohort rows  : 178   classes: 6 (AXI, CTRL, DOX, IBRU, OSI, SORA)
+Datasets     : 3
+Class counts : {'AXI': 33, 'DOX': 29, 'IBRU': 32, 'OSI': 32, 'SORA': 42, 'CTRL': 10}
+Seeds fixed  : SEED=42   augment=4x sigma=0.05
+
+### xgb
+Overall LOO accuracy: 0.5562  (99/178)
+
+Per-class precision / recall / F1:
+  class          prec   recall       f1  support
+  AXI          0.5000   0.4545   0.4762       33
+  CTRL         1.0000   0.5000   0.6667       10
+  DOX          0.7419   0.7931   0.7667       29
+  IBRU         0.3871   0.3750   0.3810       32
+  OSI          0.3714   0.4062   0.3881       32
+  SORA         0.6739   0.7381   0.7045       42
+
+Confusion matrix (rows = true, cols = pred):
+                AXI    CTRL     DOX    IBRU     OSI    SORA
+  AXI           15       0       1       5       9       3
+  CTRL           0       5       1       0       0       4
+  DOX            1       0      23       1       2       2
+  IBRU           9       0       0      12       8       3
+  OSI            5       0       2       9      13       3
+  SORA           0       0       4       4       3      31
+
+Accuracy by dataset:
+  TKI DAY 8(E.P)_REORGANIZED         0.4375  (n=80)
+  TKI_PLATE 2_REORGANIZED            0.5714  (n=49)
+  TKI_data_REORGANIZED               0.7347  (n=49)
+
+### rf
+Overall LOO accuracy: 0.5112  (91/178)
+
+Per-class precision / recall / F1:
+  class          prec   recall       f1  support
+  AXI          0.4483   0.3939   0.4194       33
+  CTRL         0.5000   0.3000   0.3750       10
+  DOX          0.7667   0.7931   0.7797       29
+  IBRU         0.3704   0.3125   0.3390       32
+  OSI          0.4118   0.4375   0.4242       32
+  SORA         0.5385   0.6667   0.5957       42
+
+Confusion matrix (rows = true, cols = pred):
+                AXI    CTRL     DOX    IBRU     OSI    SORA
+  AXI           13       0       1       5       8       6
+  CTRL           0       3       0       0       1       6
+  DOX            1       0      23       0       3       2
+  IBRU           8       0       3      10       5       6
+  OSI            5       1       2       6      14       4
+  SORA           2       2       1       6       3      28
+
+Accuracy by dataset:
+  TKI DAY 8(E.P)_REORGANIZED         0.4375  (n=80)
+  TKI_PLATE 2_REORGANIZED            0.4898  (n=49)
+  TKI_data_REORGANIZED               0.6531  (n=49)
+
+### ensemble
+Overall LOO accuracy: 0.5730  (102/178)
+
+Per-class precision / recall / F1:
+  class          prec   recall       f1  support
+  AXI          0.5161   0.4848   0.5000       33
+  CTRL         1.0000   0.5000   0.6667       10
+  DOX          0.7419   0.7931   0.7667       29
+  IBRU         0.4194   0.4062   0.4127       32
+  OSI          0.4286   0.4688   0.4478       32
+  SORA         0.6667   0.7143   0.6897       42
+
+Confusion matrix (rows = true, cols = pred):
+                AXI    CTRL     DOX    IBRU     OSI    SORA
+  AXI           16       0       1       5       8       3
+  CTRL           0       5       1       0       0       4
+  DOX            2       0      23       1       2       1
+  IBRU           9       0       0      13       7       3
+  OSI            4       0       1       8      15       4
+  SORA           0       0       5       4       3      30
+
+Accuracy by dataset:
+  TKI DAY 8(E.P)_REORGANIZED         0.4875  (n=80)
+  TKI_PLATE 2_REORGANIZED            0.5714  (n=49)
+  TKI_data_REORGANIZED               0.7143  (n=49)
+
+Top 20 features by importance (XGB):
+   1. CH2_P25_Intensity            0.03613
+   2. CH2_Median_Intensity         0.03496
+   3. CH2_GLCM_Correlation         0.03190
+   4. CH2_GLCM_ASM                 0.02348
+   5. CH2_GLCM_Energy              0.02145
+   6. CH2_Intensity_per_Area       0.02143
+   7. CH4_GLCM_Contrast            0.02087
+   8. CH2_P75_Intensity            0.02049
+   9. CH2_Std_Intensity            0.01935
+  10. CH1_Total_Intensity          0.01906
+  11. CH2_Equiv_Diameter           0.01826
+  12. CH2_Mean_Intensity           0.01811
+  13. CH4_IQR_Intensity            0.01752
+  14. CH4_Median_Intensity         0.01750
+  15. CH2_Area                     0.01697
+  16. CH4_Equiv_Diameter           0.01693
+  17. CH1_Equiv_Diameter           0.01611
+  18. CH2_IQR_Intensity            0.01603
+  19. CH4_Area                     0.01595
+  20. CH4_Perc_Covered             0.01580
+
+Top 20 features by importance (RF):
+   1. CH2_GLCM_Correlation         0.03449
+   2. CH2_P25_Intensity            0.02957
+   3. CH2_Std_Intensity            0.02884
+   4. CH2_Median_Intensity         0.02645
+   5. CH2_Intensity_per_Area       0.02541
+   6. CH2_Mean_Intensity           0.02391
+   7. CH2_GLCM_ASM                 0.02281
+   8. CH2_P75_Intensity            0.02192
+   9. CH2_IQR_Intensity            0.02149
+  10. CH4_GLCM_Contrast            0.02128
+  11. CH2_GLCM_Energy              0.02125
+  12. CH4_P25_Intensity            0.01976
+  13. CH2_GLCM_Contrast            0.01864
+  14. CH1_Total_Intensity          0.01863
+  15. CH4_GLCM_Dissimilarity       0.01808
+  16. CH4_GLCM_Correlation         0.01803
+  17. CH4_Median_Intensity         0.01758
+  18. CH4_IQR_Intensity            0.01698
+  19. CH2_Total_Intensity          0.01638
+  20. CH1_IQR_Intensity            0.01623
+
+========================================================================
+CONFOUND CHECK -- predicting `dataset` from the same features
+========================================================================
+
+All cohort rows (n=178):
+  dataset-probe accuracy : 0.9663
+  prior value            : 0.8100
+
+CTRL rows only (n=10):
+  dataset-probe accuracy : N/A (only 1 dataset present)
+  prior value            : 0.8750
+
+Lower is better: it means the normalization removed dataset identity, so the drug signal is not a dataset confound.

@@ -1,0 +1,409 @@
+{
+  "n_cohort": 178,
+  "classes": [
+    "AXI",
+    "CTRL",
+    "DOX",
+    "IBRU",
+    "OSI",
+    "SORA"
+  ],
+  "n_datasets": 3,
+  "xgb": {
+    "accuracy": 0.5561797752808989,
+    "per_dataset": {
+      "TKI DAY 8(E.P)_REORGANIZED": 0.4375,
+      "TKI_PLATE 2_REORGANIZED": 0.5714285714285714,
+      "TKI_data_REORGANIZED": 0.7346938775510204
+    },
+    "classification_report": {
+      "AXI": {
+        "precision": 0.5,
+        "recall": 0.45454545454545453,
+        "f1-score": 0.47619047619047616,
+        "support": 33.0
+      },
+      "CTRL": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 10.0
+      },
+      "DOX": {
+        "precision": 0.7419354838709677,
+        "recall": 0.7931034482758621,
+        "f1-score": 0.7666666666666667,
+        "support": 29.0
+      },
+      "IBRU": {
+        "precision": 0.3870967741935484,
+        "recall": 0.375,
+        "f1-score": 0.38095238095238093,
+        "support": 32.0
+      },
+      "OSI": {
+        "precision": 0.37142857142857144,
+        "recall": 0.40625,
+        "f1-score": 0.3880597014925373,
+        "support": 32.0
+      },
+      "SORA": {
+        "precision": 0.6739130434782609,
+        "recall": 0.7380952380952381,
+        "f1-score": 0.7045454545454546,
+        "support": 42.0
+      },
+      "accuracy": 0.5561797752808989,
+      "macro avg": {
+        "precision": 0.6123956454952247,
+        "recall": 0.5444990234860925,
+        "f1-score": 0.563846891085697,
+        "support": 178.0
+      },
+      "weighted avg": {
+        "precision": 0.5651308310014206,
+        "recall": 0.5561797752808989,
+        "f1-score": 0.555132480019282,
+        "support": 178.0
+      }
+    }
+  },
+  "rf": {
+    "accuracy": 0.5112359550561798,
+    "per_dataset": {
+      "TKI DAY 8(E.P)_REORGANIZED": 0.4375,
+      "TKI_PLATE 2_REORGANIZED": 0.4897959183673469,
+      "TKI_data_REORGANIZED": 0.6530612244897959
+    },
+    "classification_report": {
+      "AXI": {
+        "precision": 0.4482758620689655,
+        "recall": 0.3939393939393939,
+        "f1-score": 0.41935483870967744,
+        "support": 33.0
+      },
+      "CTRL": {
+        "precision": 0.5,
+        "recall": 0.3,
+        "f1-score": 0.375,
+        "support": 10.0
+      },
+      "DOX": {
+        "precision": 0.7666666666666667,
+        "recall": 0.7931034482758621,
+        "f1-score": 0.7796610169491526,
+        "support": 29.0
+      },
+      "IBRU": {
+        "precision": 0.37037037037037035,
+        "recall": 0.3125,
+        "f1-score": 0.3389830508474576,
+        "support": 32.0
+      },
+      "OSI": {
+        "precision": 0.4117647058823529,
+        "recall": 0.4375,
+        "f1-score": 0.42424242424242425,
+        "support": 32.0
+      },
+      "SORA": {
+        "precision": 0.5384615384615384,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.5957446808510638,
+        "support": 42.0
+      },
+      "accuracy": 0.5112359550561798,
+      "macro avg": {
+        "precision": 0.5059231905749823,
+        "recall": 0.48395158481365375,
+        "f1-score": 0.488831001933296,
+        "support": 178.0
+      },
+      "weighted avg": {
+        "precision": 0.5037648530173088,
+        "recall": 0.5112359550561798,
+        "f1-score": 0.5036144436380094,
+        "support": 178.0
+      }
+    }
+  },
+  "ensemble": {
+    "accuracy": 0.5730337078651685,
+    "per_dataset": {
+      "TKI DAY 8(E.P)_REORGANIZED": 0.4875,
+      "TKI_PLATE 2_REORGANIZED": 0.5714285714285714,
+      "TKI_data_REORGANIZED": 0.7142857142857143
+    },
+    "classification_report": {
+      "AXI": {
+        "precision": 0.5161290322580645,
+        "recall": 0.48484848484848486,
+        "f1-score": 0.5,
+        "support": 33.0
+      },
+      "CTRL": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 10.0
+      },
+      "DOX": {
+        "precision": 0.7419354838709677,
+        "recall": 0.7931034482758621,
+        "f1-score": 0.7666666666666667,
+        "support": 29.0
+      },
+      "IBRU": {
+        "precision": 0.41935483870967744,
+        "recall": 0.40625,
+        "f1-score": 0.4126984126984127,
+        "support": 32.0
+      },
+      "OSI": {
+        "precision": 0.42857142857142855,
+        "recall": 0.46875,
+        "f1-score": 0.44776119402985076,
+        "support": 32.0
+      },
+      "SORA": {
+        "precision": 0.6666666666666666,
+        "recall": 0.7142857142857143,
+        "f1-score": 0.6896551724137931,
+        "support": 42.0
+      },
+      "accuracy": 0.5730337078651685,
+      "macro avg": {
+        "precision": 0.6287762416794674,
+        "recall": 0.5612062745683436,
+        "f1-score": 0.580574685412565,
+        "support": 178.0
+      },
+      "weighted avg": {
+        "precision": 0.5824833014031999,
+        "recall": 0.5730337078651685,
+        "f1-score": 0.5724731722285604,
+        "support": 178.0
+      }
+    }
+  },
+  "feature_importance": {
+    "xgb": [
+      {
+        "rank": 1,
+        "feature": "CH2_P25_Intensity",
+        "importance": 0.03612921356610703
+      },
+      {
+        "rank": 2,
+        "feature": "CH2_Median_Intensity",
+        "importance": 0.03496089014695602
+      },
+      {
+        "rank": 3,
+        "feature": "CH2_GLCM_Correlation",
+        "importance": 0.03190017890268832
+      },
+      {
+        "rank": 4,
+        "feature": "CH2_GLCM_ASM",
+        "importance": 0.02347596776096171
+      },
+      {
+        "rank": 5,
+        "feature": "CH2_GLCM_Energy",
+        "importance": 0.021452221715969316
+      },
+      {
+        "rank": 6,
+        "feature": "CH2_Intensity_per_Area",
+        "importance": 0.021428544772788882
+      },
+      {
+        "rank": 7,
+        "feature": "CH4_GLCM_Contrast",
+        "importance": 0.02086704827614882
+      },
+      {
+        "rank": 8,
+        "feature": "CH2_P75_Intensity",
+        "importance": 0.020488707254525652
+      },
+      {
+        "rank": 9,
+        "feature": "CH2_Std_Intensity",
+        "importance": 0.019351488314150424
+      },
+      {
+        "rank": 10,
+        "feature": "CH1_Total_Intensity",
+        "importance": 0.019057258278173343
+      },
+      {
+        "rank": 11,
+        "feature": "CH2_Equiv_Diameter",
+        "importance": 0.018255100215999725
+      },
+      {
+        "rank": 12,
+        "feature": "CH2_Mean_Intensity",
+        "importance": 0.018113098518002066
+      },
+      {
+        "rank": 13,
+        "feature": "CH4_IQR_Intensity",
+        "importance": 0.01752176574232538
+      },
+      {
+        "rank": 14,
+        "feature": "CH4_Median_Intensity",
+        "importance": 0.017502731758724438
+      },
+      {
+        "rank": 15,
+        "feature": "CH2_Area",
+        "importance": 0.016973076053382306
+      },
+      {
+        "rank": 16,
+        "feature": "CH4_Equiv_Diameter",
+        "importance": 0.01693038203886951
+      },
+      {
+        "rank": 17,
+        "feature": "CH1_Equiv_Diameter",
+        "importance": 0.016109621801068275
+      },
+      {
+        "rank": 18,
+        "feature": "CH2_IQR_Intensity",
+        "importance": 0.016025273453737242
+      },
+      {
+        "rank": 19,
+        "feature": "CH4_Area",
+        "importance": 0.01594928921830809
+      },
+      {
+        "rank": 20,
+        "feature": "CH4_Perc_Covered",
+        "importance": 0.01579702943968953
+      }
+    ],
+    "rf": [
+      {
+        "rank": 1,
+        "feature": "CH2_GLCM_Correlation",
+        "importance": 0.03448533466123437
+      },
+      {
+        "rank": 2,
+        "feature": "CH2_P25_Intensity",
+        "importance": 0.02956936030140427
+      },
+      {
+        "rank": 3,
+        "feature": "CH2_Std_Intensity",
+        "importance": 0.028843961162167378
+      },
+      {
+        "rank": 4,
+        "feature": "CH2_Median_Intensity",
+        "importance": 0.026447517573484156
+      },
+      {
+        "rank": 5,
+        "feature": "CH2_Intensity_per_Area",
+        "importance": 0.025412527817515716
+      },
+      {
+        "rank": 6,
+        "feature": "CH2_Mean_Intensity",
+        "importance": 0.023912428892856004
+      },
+      {
+        "rank": 7,
+        "feature": "CH2_GLCM_ASM",
+        "importance": 0.02281226776475917
+      },
+      {
+        "rank": 8,
+        "feature": "CH2_P75_Intensity",
+        "importance": 0.021918909920437733
+      },
+      {
+        "rank": 9,
+        "feature": "CH2_IQR_Intensity",
+        "importance": 0.021494381559171962
+      },
+      {
+        "rank": 10,
+        "feature": "CH4_GLCM_Contrast",
+        "importance": 0.021278565961326785
+      },
+      {
+        "rank": 11,
+        "feature": "CH2_GLCM_Energy",
+        "importance": 0.02124678864188261
+      },
+      {
+        "rank": 12,
+        "feature": "CH4_P25_Intensity",
+        "importance": 0.019757177895687462
+      },
+      {
+        "rank": 13,
+        "feature": "CH2_GLCM_Contrast",
+        "importance": 0.018644726687554885
+      },
+      {
+        "rank": 14,
+        "feature": "CH1_Total_Intensity",
+        "importance": 0.018634798610470335
+      },
+      {
+        "rank": 15,
+        "feature": "CH4_GLCM_Dissimilarity",
+        "importance": 0.018083559705559325
+      },
+      {
+        "rank": 16,
+        "feature": "CH4_GLCM_Correlation",
+        "importance": 0.018027192539716786
+      },
+      {
+        "rank": 17,
+        "feature": "CH4_Median_Intensity",
+        "importance": 0.017581302077081404
+      },
+      {
+        "rank": 18,
+        "feature": "CH4_IQR_Intensity",
+        "importance": 0.016984993493334134
+      },
+      {
+        "rank": 19,
+        "feature": "CH2_Total_Intensity",
+        "importance": 0.016375984400352196
+      },
+      {
+        "rank": 20,
+        "feature": "CH1_IQR_Intensity",
+        "importance": 0.016233599540220744
+      }
+    ]
+  },
+  "confound": {
+    "all": {
+      "accuracy": 0.9662921348314607,
+      "reason": null,
+      "n": 178,
+      "prior": 0.81
+    },
+    "ctrl": {
+      "accuracy": null,
+      "reason": "only 1 dataset present",
+      "n": 10,
+      "prior": 0.875
+    }
+  }
+}

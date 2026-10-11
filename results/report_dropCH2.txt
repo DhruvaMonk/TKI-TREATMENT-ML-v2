@@ -1,0 +1,134 @@
+========================================================================
+LOO MODELING REPORT (harold's protocol) -- v2
+========================================================================
+
+Features CSV : data/processed/features_v2.csv
+Dropped chan : CH2  (46 feature columns kept)
+Cohort rows  : 80   classes: 5 (AXI, DOX, IBRU, OSI, SORA)
+Datasets     : 1
+Class counts : {'AXI': 16, 'DOX': 16, 'IBRU': 16, 'OSI': 16, 'SORA': 16}
+Seeds fixed  : SEED=42   augment=4x sigma=0.05
+
+### xgb
+Overall LOO accuracy: 0.4625  (37/80)
+
+Per-class precision / recall / F1:
+  class          prec   recall       f1  support
+  AXI          0.3636   0.2500   0.2963       16
+  DOX          0.8125   0.8125   0.8125       16
+  IBRU         0.2222   0.2500   0.2353       16
+  OSI          0.3333   0.4375   0.3784       16
+  SORA         0.6429   0.5625   0.6000       16
+
+Confusion matrix (rows = true, cols = pred):
+                AXI     DOX    IBRU     OSI    SORA
+  AXI            4       1       4       7       0
+  DOX            1      13       2       0       0
+  IBRU           3       1       4       5       3
+  OSI            2       1       4       7       2
+  SORA           1       0       4       2       9
+
+Accuracy by dataset:
+  TKI DAY 8(E.P)_REORGANIZED         0.4625  (n=80)
+
+### rf
+Overall LOO accuracy: 0.4500  (36/80)
+
+Per-class precision / recall / F1:
+  class          prec   recall       f1  support
+  AXI          0.3333   0.3125   0.3226       16
+  DOX          0.7647   0.8125   0.7879       16
+  IBRU         0.1667   0.1875   0.1765       16
+  OSI          0.3333   0.3750   0.3529       16
+  SORA         0.7500   0.5625   0.6429       16
+
+Confusion matrix (rows = true, cols = pred):
+                AXI     DOX    IBRU     OSI    SORA
+  AXI            5       1       5       5       0
+  DOX            2      13       1       0       0
+  IBRU           6       1       3       4       2
+  OSI            2       2       5       6       1
+  SORA           0       0       4       3       9
+
+Accuracy by dataset:
+  TKI DAY 8(E.P)_REORGANIZED         0.4500  (n=80)
+
+### ensemble
+Overall LOO accuracy: 0.4500  (36/80)
+
+Per-class precision / recall / F1:
+  class          prec   recall       f1  support
+  AXI          0.3077   0.2500   0.2759       16
+  DOX          0.7500   0.7500   0.7500       16
+  IBRU         0.2105   0.2500   0.2286       16
+  OSI          0.3500   0.4375   0.3889       16
+  SORA         0.7500   0.5625   0.6429       16
+
+Confusion matrix (rows = true, cols = pred):
+                AXI     DOX    IBRU     OSI    SORA
+  AXI            4       1       5       6       0
+  DOX            2      12       2       0       0
+  IBRU           4       1       4       5       2
+  OSI            2       2       4       7       1
+  SORA           1       0       4       2       9
+
+Accuracy by dataset:
+  TKI DAY 8(E.P)_REORGANIZED         0.4500  (n=80)
+
+Top 20 features by importance (XGB):
+   1. CH4_Std_Intensity            0.05668
+   2. CH1_Circularity              0.04019
+   3. CH1_Solidity                 0.03620
+   4. CH4_Solidity                 0.03584
+   5. CH4_Circularity              0.03412
+   6. CH4_Median_Intensity         0.03049
+   7. CH4_Intensity_per_Area       0.03029
+   8. CH1_Intensity_per_Area       0.02938
+   9. CH4_Total_Intensity          0.02688
+  10. CH4_GLCM_Dissimilarity       0.02665
+  11. CH4_Mean_Intensity           0.02564
+  12. CH1_Perc_Covered             0.02469
+  13. CH4_GLCM_Contrast            0.02447
+  14. CH1_Total_Intensity          0.02398
+  15. CH1_P75_Intensity            0.02357
+  16. CH1_Area                     0.02354
+  17. CH4_GLCM_Homogeneity         0.02295
+  18. CH4_Equiv_Diameter           0.02279
+  19. CH1_Equiv_Diameter           0.02259
+  20. CH4_Perc_Covered             0.02232
+
+Top 20 features by importance (RF):
+   1. CH1_Circularity              0.04773
+   2. CH4_Circularity              0.04726
+   3. CH1_Solidity                 0.04557
+   4. CH4_Solidity                 0.04519
+   5. CH4_Std_Intensity            0.03579
+   6. CH4_GLCM_Contrast            0.03577
+   7. CH4_GLCM_Correlation         0.03236
+   8. CH4_GLCM_Dissimilarity       0.03156
+   9. CH4_GLCM_Homogeneity         0.02910
+  10. CH4_Extent                   0.02806
+  11. CH1_Extent                   0.02640
+  12. CH4_Intensity_per_Area       0.02421
+  13. CH1_Total_Intensity          0.02380
+  14. CH4_P75_Intensity            0.02336
+  15. CH4_IQR_Intensity            0.02323
+  16. CH4_GLCM_ASM                 0.02230
+  17. CH4_P25_Intensity            0.02215
+  18. CH4_GLCM_Energy              0.02189
+  19. CH1_GLCM_Contrast            0.02118
+  20. CH4_Mean_Intensity           0.02104
+
+========================================================================
+CONFOUND CHECK -- predicting `dataset` from the same features
+========================================================================
+
+All cohort rows (n=80):
+  dataset-probe accuracy : N/A (only 1 dataset present)
+  prior value            : 0.8100
+
+CTRL rows only (n=0):
+  dataset-probe accuracy : N/A (only 0 dataset present)
+  prior value            : 0.8750
+
+Lower is better: it means the normalization removed dataset identity, so the drug signal is not a dataset confound.

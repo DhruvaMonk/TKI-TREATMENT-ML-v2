@@ -1,0 +1,384 @@
+{
+  "n_cohort": 80,
+  "classes": [
+    "AXI",
+    "DOX",
+    "IBRU",
+    "OSI",
+    "SORA"
+  ],
+  "n_datasets": 1,
+  "xgb": {
+    "accuracy": 0.4625,
+    "per_dataset": {
+      "TKI DAY 8(E.P)_REORGANIZED": 0.4625
+    },
+    "classification_report": {
+      "AXI": {
+        "precision": 0.36363636363636365,
+        "recall": 0.25,
+        "f1-score": 0.2962962962962963,
+        "support": 16.0
+      },
+      "DOX": {
+        "precision": 0.8125,
+        "recall": 0.8125,
+        "f1-score": 0.8125,
+        "support": 16.0
+      },
+      "IBRU": {
+        "precision": 0.2222222222222222,
+        "recall": 0.25,
+        "f1-score": 0.23529411764705882,
+        "support": 16.0
+      },
+      "OSI": {
+        "precision": 0.3333333333333333,
+        "recall": 0.4375,
+        "f1-score": 0.3783783783783784,
+        "support": 16.0
+      },
+      "SORA": {
+        "precision": 0.6428571428571429,
+        "recall": 0.5625,
+        "f1-score": 0.6,
+        "support": 16.0
+      },
+      "accuracy": 0.4625,
+      "macro avg": {
+        "precision": 0.47490981240981245,
+        "recall": 0.4625,
+        "f1-score": 0.46449375846434676,
+        "support": 80.0
+      },
+      "weighted avg": {
+        "precision": 0.47490981240981245,
+        "recall": 0.4625,
+        "f1-score": 0.46449375846434676,
+        "support": 80.0
+      }
+    }
+  },
+  "rf": {
+    "accuracy": 0.45,
+    "per_dataset": {
+      "TKI DAY 8(E.P)_REORGANIZED": 0.45
+    },
+    "classification_report": {
+      "AXI": {
+        "precision": 0.3333333333333333,
+        "recall": 0.3125,
+        "f1-score": 0.3225806451612903,
+        "support": 16.0
+      },
+      "DOX": {
+        "precision": 0.7647058823529411,
+        "recall": 0.8125,
+        "f1-score": 0.7878787878787878,
+        "support": 16.0
+      },
+      "IBRU": {
+        "precision": 0.16666666666666666,
+        "recall": 0.1875,
+        "f1-score": 0.17647058823529413,
+        "support": 16.0
+      },
+      "OSI": {
+        "precision": 0.3333333333333333,
+        "recall": 0.375,
+        "f1-score": 0.35294117647058826,
+        "support": 16.0
+      },
+      "SORA": {
+        "precision": 0.75,
+        "recall": 0.5625,
+        "f1-score": 0.6428571428571429,
+        "support": 16.0
+      },
+      "accuracy": 0.45,
+      "macro avg": {
+        "precision": 0.46960784313725484,
+        "recall": 0.45,
+        "f1-score": 0.4565456681206207,
+        "support": 80.0
+      },
+      "weighted avg": {
+        "precision": 0.46960784313725484,
+        "recall": 0.45,
+        "f1-score": 0.4565456681206207,
+        "support": 80.0
+      }
+    }
+  },
+  "ensemble": {
+    "accuracy": 0.45,
+    "per_dataset": {
+      "TKI DAY 8(E.P)_REORGANIZED": 0.45
+    },
+    "classification_report": {
+      "AXI": {
+        "precision": 0.3076923076923077,
+        "recall": 0.25,
+        "f1-score": 0.27586206896551724,
+        "support": 16.0
+      },
+      "DOX": {
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1-score": 0.75,
+        "support": 16.0
+      },
+      "IBRU": {
+        "precision": 0.21052631578947367,
+        "recall": 0.25,
+        "f1-score": 0.22857142857142856,
+        "support": 16.0
+      },
+      "OSI": {
+        "precision": 0.35,
+        "recall": 0.4375,
+        "f1-score": 0.3888888888888889,
+        "support": 16.0
+      },
+      "SORA": {
+        "precision": 0.75,
+        "recall": 0.5625,
+        "f1-score": 0.6428571428571429,
+        "support": 16.0
+      },
+      "accuracy": 0.45,
+      "macro avg": {
+        "precision": 0.4736437246963563,
+        "recall": 0.45,
+        "f1-score": 0.4572359058565955,
+        "support": 80.0
+      },
+      "weighted avg": {
+        "precision": 0.4736437246963563,
+        "recall": 0.45,
+        "f1-score": 0.4572359058565955,
+        "support": 80.0
+      }
+    }
+  },
+  "feature_importance": {
+    "xgb": [
+      {
+        "rank": 1,
+        "feature": "CH4_Std_Intensity",
+        "importance": 0.05668231206946075
+      },
+      {
+        "rank": 2,
+        "feature": "CH1_Circularity",
+        "importance": 0.04018587458413094
+      },
+      {
+        "rank": 3,
+        "feature": "CH1_Solidity",
+        "importance": 0.036199953965842725
+      },
+      {
+        "rank": 4,
+        "feature": "CH4_Solidity",
+        "importance": 0.03584254358429462
+      },
+      {
+        "rank": 5,
+        "feature": "CH4_Circularity",
+        "importance": 0.034115375485271215
+      },
+      {
+        "rank": 6,
+        "feature": "CH4_Median_Intensity",
+        "importance": 0.03048967575887218
+      },
+      {
+        "rank": 7,
+        "feature": "CH4_Intensity_per_Area",
+        "importance": 0.030285017052665352
+      },
+      {
+        "rank": 8,
+        "feature": "CH1_Intensity_per_Area",
+        "importance": 0.02938028727658093
+      },
+      {
+        "rank": 9,
+        "feature": "CH4_Total_Intensity",
+        "importance": 0.026875067222863435
+      },
+      {
+        "rank": 10,
+        "feature": "CH4_GLCM_Dissimilarity",
+        "importance": 0.026650200446601956
+      },
+      {
+        "rank": 11,
+        "feature": "CH4_Mean_Intensity",
+        "importance": 0.025639072724152355
+      },
+      {
+        "rank": 12,
+        "feature": "CH1_Perc_Covered",
+        "importance": 0.024692855309695005
+      },
+      {
+        "rank": 13,
+        "feature": "CH4_GLCM_Contrast",
+        "importance": 0.02446791228139773
+      },
+      {
+        "rank": 14,
+        "feature": "CH1_Total_Intensity",
+        "importance": 0.023984171566553414
+      },
+      {
+        "rank": 15,
+        "feature": "CH1_P75_Intensity",
+        "importance": 0.0235745633719489
+      },
+      {
+        "rank": 16,
+        "feature": "CH1_Area",
+        "importance": 0.023540786607190965
+      },
+      {
+        "rank": 17,
+        "feature": "CH4_GLCM_Homogeneity",
+        "importance": 0.022950955166015773
+      },
+      {
+        "rank": 18,
+        "feature": "CH4_Equiv_Diameter",
+        "importance": 0.02279046645271592
+      },
+      {
+        "rank": 19,
+        "feature": "CH1_Equiv_Diameter",
+        "importance": 0.022593830147525296
+      },
+      {
+        "rank": 20,
+        "feature": "CH4_Perc_Covered",
+        "importance": 0.02231910268892534
+      }
+    ],
+    "rf": [
+      {
+        "rank": 1,
+        "feature": "CH1_Circularity",
+        "importance": 0.0477254726496769
+      },
+      {
+        "rank": 2,
+        "feature": "CH4_Circularity",
+        "importance": 0.04726033656767249
+      },
+      {
+        "rank": 3,
+        "feature": "CH1_Solidity",
+        "importance": 0.04557081868622142
+      },
+      {
+        "rank": 4,
+        "feature": "CH4_Solidity",
+        "importance": 0.04519160629088965
+      },
+      {
+        "rank": 5,
+        "feature": "CH4_Std_Intensity",
+        "importance": 0.035787260328032706
+      },
+      {
+        "rank": 6,
+        "feature": "CH4_GLCM_Contrast",
+        "importance": 0.03576782949421613
+      },
+      {
+        "rank": 7,
+        "feature": "CH4_GLCM_Correlation",
+        "importance": 0.032359155838943894
+      },
+      {
+        "rank": 8,
+        "feature": "CH4_GLCM_Dissimilarity",
+        "importance": 0.03155557750706426
+      },
+      {
+        "rank": 9,
+        "feature": "CH4_GLCM_Homogeneity",
+        "importance": 0.029097373922164015
+      },
+      {
+        "rank": 10,
+        "feature": "CH4_Extent",
+        "importance": 0.028061502779792878
+      },
+      {
+        "rank": 11,
+        "feature": "CH1_Extent",
+        "importance": 0.026399882037195538
+      },
+      {
+        "rank": 12,
+        "feature": "CH4_Intensity_per_Area",
+        "importance": 0.024214614550223192
+      },
+      {
+        "rank": 13,
+        "feature": "CH1_Total_Intensity",
+        "importance": 0.023803005869099288
+      },
+      {
+        "rank": 14,
+        "feature": "CH4_P75_Intensity",
+        "importance": 0.023363792133615596
+      },
+      {
+        "rank": 15,
+        "feature": "CH4_IQR_Intensity",
+        "importance": 0.023233351736900568
+      },
+      {
+        "rank": 16,
+        "feature": "CH4_GLCM_ASM",
+        "importance": 0.02229933131145182
+      },
+      {
+        "rank": 17,
+        "feature": "CH4_P25_Intensity",
+        "importance": 0.02214949599129103
+      },
+      {
+        "rank": 18,
+        "feature": "CH4_GLCM_Energy",
+        "importance": 0.021889725624497248
+      },
+      {
+        "rank": 19,
+        "feature": "CH1_GLCM_Contrast",
+        "importance": 0.021182041581028183
+      },
+      {
+        "rank": 20,
+        "feature": "CH4_Mean_Intensity",
+        "importance": 0.021037678294427695
+      }
+    ]
+  },
+  "confound": {
+    "all": {
+      "accuracy": null,
+      "reason": "only 1 dataset present",
+      "n": 80,
+      "prior": 0.81
+    },
+    "ctrl": {
+      "accuracy": null,
+      "reason": "only 0 dataset present",
+      "n": 0,
+      "prior": 0.875
+    }
+  }
+}
